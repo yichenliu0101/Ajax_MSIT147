@@ -12,6 +12,10 @@ namespace Homework.Controllers
         {
             _logger = logger;
         }
+        public IActionResult Homework1()
+        {
+            return View();
+        }
 
         public IActionResult Homework2()
         {

@@ -18,6 +18,15 @@ namespace prjLesson.Controllers
             return View();
         }
 
+        public IActionResult First()
+        {
+            return View();
+        }
+
+        public IActionResult Addresses() 
+        {
+            return View();
+        }
         public IActionResult Privacy()
         {
             return View();

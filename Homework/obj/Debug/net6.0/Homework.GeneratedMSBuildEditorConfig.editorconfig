@@ -16,6 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\User\Documents\Ajax_MSIT147\Homework
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/User/Documents/Ajax_MSIT147/Homework/Views/Home/Homework1.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxIb21ld29yazEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/User/Documents/Ajax_MSIT147/Homework/Views/Home/Homework2.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxIb21ld29yazIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
