@@ -12,8 +12,8 @@
 <script src="~/js/Travel.js"></script>
 <script>
     const datas = spots.CommonFormat.Section;
-
     const landscape = datas.map((value,idx) => {
+
         const { stitle, address, xbody } = value;
         let imgName = value.file.img;
         if(imgName.length > 0){

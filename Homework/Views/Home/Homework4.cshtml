@@ -1,0 +1,62 @@
+﻿@{
+    ViewData["Title"] = "Homework4";
+}
+
+<h1>Homework4</h1>
+
+<select id="cities"></select>
+<select id="districts"></select>
+<select id="roads"></select>
+
+@section Scripts{
+    <script>
+        let selectedArray = [];
+        getSelectedValue(selectedArray, "cities");
+
+        //先找到要控制的對象
+        const cities = document.querySelector('#cities');
+        //在甚麼的行為下
+        cities.addEventListener('change', (e) => {
+            selectedArray.push(e.currentTarget.value);
+            getSelectedValue(selectedArray, "districts");
+
+        })
+
+        const districts = document.querySelector("#districts");
+        districts.addEventListener('change', (e) => {
+            selectedArray.push(e.currentTarget.value);
+            getSelectedValue(selectedArray, "roads");
+        })
+
+        function getSelectedValue(selectedArray, selectorName) {
+            //要做甚麼事=>透過XMLHttpRequest物件對伺服器發出要求(Request)以及接受伺服器回應(Response)的資料
+            //第一步 建立Ajaxs物件
+            const xhr = new XMLHttpRequest();
+
+            //製作搜尋字串將selectedArray拆解成selectedArray=台北市&&selectedArray=台北市士林區
+            let queryString = selectedArray.map(value => "selectedArray=" + encodeURIComponent(value)).join("&");
+
+            //第二步 對伺服器發出要求
+            xhr.open('GET', `/api/SelectedCitiesOrDistricts?` + queryString);
+            xhr.send();
+
+            //第三步 接受伺服器回應(Response)的資料
+            //load事件表示伺服器已經回應資料了
+            xhr.addEventListener('load', () => {
+                //接收資料
+                const datas = JSON.parse(xhr.responseText);
+                const values = datas.map(value => {
+                    return (`<option value="${value}">${value}</option>`)
+                })
+                document.querySelector(`#${selectorName}`).innerHTML = values.join("");
+            })
+        }
+
+        
+    </script>
+
+    }
+@section Styles{
+
+}
+
