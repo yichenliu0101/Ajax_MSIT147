@@ -7,20 +7,27 @@
 
 @section Scripts{
     <script>
-        fetch("/Api/Index")
-        .then(response=>{
-            if(response.ok){
-                return response.text(); //response.json 看資料格式
-            }
-            else{
-                console.log(`${response.status} : ${response.statusText}`);
-            }
-        })
-        .then(data => {
+        //fetch("/Api/Index")
+        //.then(response=>{
+        //    if(response.ok){
+        //        return response.text(); //response.json 看資料格式
+        //    }
+        //    else{
+        //        console.log(`${response.status} : ${response.statusText}`);
+        //    }
+        //})
+        //.then(data => {
+        //    console.log(data);
+        //})
+        //.catch(error=>{
+        //    console.log(error);
+        //})
+        async function CallAjax() {
+            const response = await fetch("/api/Index");
+            const data = await response.text();
             console.log(data);
-        })
-        .catch(error=>{
-            console.log(error);
-        })
+        }
+
+        CallAjax();
     </script>
 }

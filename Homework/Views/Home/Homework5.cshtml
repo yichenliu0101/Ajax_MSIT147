@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewData["Title"] = "Homework5";
+}
+
+<h1>Homework5</h1>
+<input type="file" id="img1" class="form-control" name="Photo"/>
+<figure class="mt-3 text-center ">
+    <img id="preview" style="max-height:250px"/>
+</figure>
+
+@section Scripts{
+    <script>
+        const uploadImg = document.querySelector('#img1');
+        const previewImg = document.querySelector('#preview');
+        uploadImg.addEventListener('change',(e)=>{
+            previewImg.removeAttribute('src');
+            const file = e.currentTarget.files[0];
+            const objectURL = URL.createObjectURL(file);
+            previewImg.setAttribute('src', objectURL);
+        })
+    </script>
+}

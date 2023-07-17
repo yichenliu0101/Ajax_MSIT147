@@ -13,6 +13,13 @@ namespace Homework.Controllers
             _context = context;
         }
 
+        public IActionResult AutocompleteName(string name)
+        {
+            var nameList = _context.Members.Where(x=>x.Name.StartsWith(name)).Select(x=>x.Name);
+
+            return Json(nameList);
+        }
+
         public IActionResult CheckAccount(string name)
         {
             var nameInDb = _context.Members.FirstOrDefault(m => m.Name == name);
@@ -40,23 +47,23 @@ namespace Homework.Controllers
             return Json(roads);
         }
 
-        //public IActionResult SelectedCitiesOrDistricts(string[] selectedArray)
-        //{
-        //    List<string> list = new();
-        //    switch (selectedArray.Length)
-        //    {
-        //        case 1:
-        //            list = _context.Address.Where(x => x.City == selectedArray[0]).Select(x => x.SiteId).Distinct().ToList();
-        //            break;
-        //        case 2:
-        //            list = _context.Address.Where(x => x.SiteId == selectedArray[1]).Select(x => x.Road).Distinct().ToList();
-        //            break;
-        //        default:
-        //            list = _context.Address.Select(x => x.City).Distinct().ToList();
-        //            break;
-        //    }
-        //    return Json(list);
-        //}
+        public IActionResult SelectedCitiesOrDistricts(string[] selectedArray)
+        {
+            List<string> list = new();
+            switch (selectedArray.Length)
+            {
+                case 1:
+                    list = _context.Address.Where(x => x.City == selectedArray[0]).Select(x => x.SiteId).Distinct().ToList();
+                    break;
+                case 2:
+                    list = _context.Address.Where(x => x.SiteId == selectedArray[1]).Select(x => x.Road).Distinct().ToList();
+                    break;
+                default:
+                    list = _context.Address.Select(x => x.City).Distinct().ToList();
+                    break;
+            }
+            return Json(list);
+        }
 
         //public IActionResult Address()
         //{

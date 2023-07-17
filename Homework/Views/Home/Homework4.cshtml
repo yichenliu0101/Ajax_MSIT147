@@ -10,7 +10,7 @@
 
 @section Scripts{
     <script>
-        //仍須更改
+        ////仍須更改
         //const selectedArray = [];
         //getSelectedValue(selectedArray, "cities");
 
@@ -18,15 +18,16 @@
         //const cities = document.querySelector('#cities');
         ////在甚麼的行為下
         //cities.addEventListener('change', (e) => {
+        //    selectedArray.length = 0;
         //    selectedArray.push(e.currentTarget.value);
         //    getSelectedValue(selectedArray, "districts");
-
         //})
 
         //const districts = document.querySelector("#districts");
         //districts.addEventListener('change', (e) => {
         //    selectedArray.push(e.currentTarget.value);
         //    getSelectedValue(selectedArray, "roads");
+        //    selectedArray.pop();
         //})
 
         //function getSelectedValue(selectedArray, selectorName) {
@@ -50,6 +51,15 @@
         //            return (`<option value="${value}">${value}</option>`)
         //        })
         //        document.querySelector(`#${selectorName}`).innerHTML = values.join("");
+        //        if(selectedArray.length == 0){
+        //            selectedArray.length = 0;
+        //            selectedArray.push(cities.value);
+        //            getSelectedValue(selectedArray, "districts");
+        //        }
+        //        if(selectedArray.length == 1){
+        //            selectedArray.push(districts.value);
+        //            getSelectedValue(selectedArray, "roads");
+        //        }
         //    })
         //}
 

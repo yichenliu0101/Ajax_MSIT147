@@ -32,6 +32,21 @@ namespace Homework.Controllers
             return View();
         }
 
+        public IActionResult Homework5()
+        {
+            return View();
+        }
+
+        public IActionResult Homework6()
+        {
+            return View();
+        }
+
+        public IActionResult Homework7()
+        {
+            return View();
+        }
+
         public IActionResult Index()
         {
             return View();
