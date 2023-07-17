@@ -19,44 +19,45 @@ namespace Homework.Controllers
             return Json(nameInDb);
         }
 
-        //public IActionResult Cities()
-        //{
-        //    var cities = _context.Address.Select(x => x.City).Distinct();
-
-        //    return Json(cities);
-        //}
-
-        //public IActionResult Districts(string city)
-        //{
-        //    var districts = _context.Address.Where(x => x.City == city).Select(x => x.SiteId).Distinct();
-
-        //    return Json(districts);
-        //}
-
-        //public IActionResult Roads(string district)
-        //{
-        //    var roads = _context.Address.Where(x => x.SiteId == district).Select(x => x.Road).Distinct();
-
-        //    return Json(roads);
-        //}
-
-        public IActionResult SelectedCitiesOrDistricts(string[] selectedArray)
+        public IActionResult Cities()
         {
-            List<string> list = new();
-            switch (selectedArray.Length)
-            {
-                case 1:
-                    list = _context.Address.Where(x => x.City == selectedArray[0]).Select(x => x.SiteId).Distinct().ToList();
-                    break;
-                case 2:
-                    list = _context.Address.Where(x => x.SiteId == selectedArray[1]).Select(x => x.Road).Distinct().ToList();
-                    break;
-                default:
-                    list = _context.Address.Select(x => x.City).Distinct().ToList();
-                    break;
-            }
-            return Json(list);
+            var cities = _context.Address.Select(x => x.City).Distinct();
+
+            return Json(cities);
         }
+
+        public IActionResult Districts(string city)
+        {
+            var districts = _context.Address.Where(x => x.City == city).Select(x => x.SiteId).Distinct();
+
+            return Json(districts);
+        }
+
+        public IActionResult Roads(string district)
+        {
+            var roads = _context.Address.Where(x => x.SiteId == district).Select(x => x.Road).Distinct();
+
+            return Json(roads);
+        }
+
+        //public IActionResult SelectedCitiesOrDistricts(string[] selectedArray)
+        //{
+        //    List<string> list = new();
+        //    switch (selectedArray.Length)
+        //    {
+        //        case 1:
+        //            list = _context.Address.Where(x => x.City == selectedArray[0]).Select(x => x.SiteId).Distinct().ToList();
+        //            break;
+        //        case 2:
+        //            list = _context.Address.Where(x => x.SiteId == selectedArray[1]).Select(x => x.Road).Distinct().ToList();
+        //            break;
+        //        default:
+        //            list = _context.Address.Select(x => x.City).Distinct().ToList();
+        //            break;
+        //    }
+        //    return Json(list);
+        //}
+
         //public IActionResult Address()
         //{
         //    var addressDict = new Dictionary<string, Dictionary<string, List<string>>>();

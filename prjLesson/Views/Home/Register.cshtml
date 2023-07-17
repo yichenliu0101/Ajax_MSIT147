@@ -1,0 +1,70 @@
+﻿@{
+    ViewData["Title"] = "Register";
+}
+
+<h1>Register</h1>
+
+<a href="/Home/Index" id="backToIndex">回首頁</a>
+<div class="container">
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <form method="post" action="/Api/Register" enctype="multipart/form-data" name="registerForm">
+                <div class="mb-3">
+                    <label for="inputName" class="form-label">姓名</label>
+                    <input type="text" class="form-control" id="inputName" name="Name">
+                    <div id="nameHelp" class="form-text"></div>
+                </div>
+                <div class="mb-3">
+                    <label for="inputEmail" class="form-label">電子郵件</label>
+                    <input type="email" class="form-control" id="inputEmail" name="Email">
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="inputAge" class="form-label">年齡</label>
+                    <input type="number" class="form-control" id="inputAge" name="Age">
+                </div>
+                <div class="mb-3">
+                    <label for="formFile" class="form-label">選擇檔案</label>
+                    <input class="form-control" type="file" id="formFile" name="Photo">
+                </div>
+                <button type="submit" class="btn btn-primary" id="submit">Submit</button>
+            </form>
+            <div id="div1" class="alert alert-dark mt-3"></div>
+        </div>
+        <div class="col-3">
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script>
+        const btnSubmit = document.querySelector('#submit');
+        const div1 = document.querySelector('#div1');
+        const link = document.querySelector('#backToIndex');
+
+        btnSubmit.addEventListener('click', event => {
+            event.preventDefault();
+
+            const formData = new FormData(document.registerForm);
+            const xhr = new XMLHttpRequest();
+            xhr.open("POST", "/Api/Register");
+            //xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            //xhr.send("Name=Liu&Age=25&Email=HIHI@gmail");
+            xhr.send(formData);
+
+            xhr.addEventListener("load", () => {
+                const data = xhr.responseText;
+                div1.innerHTML = data;
+            })
+        })
+
+        link.addEventListener('click', event => {
+            if (!window.confirm("確定要離開嗎?")) {
+                event.preventDefault();
+            }
+        })
+
+
+    </script>
+}

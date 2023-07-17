@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewData["Title"] = "Fetch";
+}
+
+<h1>Fetch</h1>
+
+@section Scripts{
+    <script>
+        fetch("/Api/Index")
+        .then(response=>{
+            if(response.ok){
+                return response.text(); //response.json 看資料格式
+            }
+            else{
+                console.log(`${response.status} : ${response.statusText}`);
+            }
+        })
+        .then(data => {
+            console.log(data);
+        })
+        .catch(error=>{
+            console.log(error);
+        })
+    </script>
+}

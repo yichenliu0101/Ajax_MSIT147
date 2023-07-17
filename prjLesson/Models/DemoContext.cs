@@ -53,7 +53,7 @@ namespace prjLesson.Models
             {
                 entity.HasKey(e => e.MemberId);
 
-                entity.Property(e => e.MemberId).ValueGeneratedNever();
+                entity.Property(e => e.MemberId).HasColumnName("MemberId");
 
                 entity.Property(e => e.Email).HasMaxLength(200);
 

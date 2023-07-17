@@ -23,6 +23,21 @@ namespace prjLesson.Controllers
             return View();
         }
 
+        public IActionResult AjaxEvent()
+        {
+            return View();
+        }
+
+        public IActionResult Register() 
+        {
+            return View();
+        }
+
+        public IActionResult Fetch() 
+        {
+            return View();
+        }
+
         public IActionResult Addresses() 
         {
             return View();

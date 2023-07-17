@@ -6,10 +6,12 @@ namespace prjLesson.Controllers
 {
     public class ApiController : Controller
     {
-        private DemoContext _context;
+        private readonly DemoContext _context;
+        private readonly IWebHostEnvironment _host;
 
-        public ApiController(DemoContext context) {
+        public ApiController(DemoContext context, IWebHostEnvironment host){
             _context = context;
+            _host = host;
         }
 
         public IActionResult Index()
@@ -19,6 +21,60 @@ namespace prjLesson.Controllers
             //return Content("<h2>Hello Content 好好好</h2>", "text/html", Encoding.UTF8);
 
             //return Content("Index", "application/msword");
+        }
+
+        public IActionResult AjaxEvent(string userName)
+        {
+            if(string.IsNullOrEmpty(userName))
+            {
+                userName = "Guest";
+            }
+
+            System.Threading.Thread.Sleep(5000);
+            return Content("Hello " +  userName);
+        }
+
+        [HttpPost]
+        public IActionResult Register(Members member, IFormFile photo) 
+        {
+            string result = "未上傳檔案";
+            if (photo != null)
+            {
+                string photoName = Path.GetFileNameWithoutExtension(photo.FileName) + Guid.NewGuid().GetHashCode() + Path.GetExtension(photo.FileName);
+                result = Path.Combine(_host.WebRootPath, "uploads", photoName);
+                using (var fileStream = new FileStream(result, FileMode.Create))
+                {
+                    photo.CopyTo(fileStream);
+                }
+
+                byte[]? imgByte = null;
+                using(var memoryStream = new MemoryStream())
+                {
+                    photo.CopyTo(memoryStream);
+                    imgByte = memoryStream.ToArray();
+                }
+
+                //加入資料庫
+                member.FileName = photoName;
+                member.FileData = imgByte;
+                _context.Members.Add(member);
+                _context.SaveChanges();
+            }
+
+            return Content(result);
+            //return Content($"Hello {member.Name}");
+        }
+
+        public IActionResult GetImage(int id = 1)
+        {
+            Members? member = _context.Members.Find(id);
+            byte[]? imgByte = null;
+            if(member != null)
+            {
+                imgByte = member.FileData;
+            }
+
+            return File(imgByte, "image/jpeg");
         }
 
         public IActionResult Cities()
