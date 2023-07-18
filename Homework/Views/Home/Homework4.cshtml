@@ -10,118 +10,119 @@
 
 @section Scripts{
     <script>
-        ////仍須更改
-        //const selectedArray = [];
-        //getSelectedValue(selectedArray, "cities");
+        //仍須更改
+        const selectedArray = [];
+        getSelectedValue(selectedArray, "cities");
 
-        ////先找到要控制的對象
-        //const cities = document.querySelector('#cities');
-        ////在甚麼的行為下
-        //cities.addEventListener('change', (e) => {
-        //    selectedArray.length = 0;
-        //    selectedArray.push(e.currentTarget.value);
-        //    getSelectedValue(selectedArray, "districts");
+        //先找到要控制的對象
+        const cities = document.querySelector('#cities');
+        //在甚麼的行為下
+        cities.addEventListener('change', (e) => {
+            selectedArray.length = 0;
+            selectedArray.push(e.currentTarget.value);
+            getSelectedValue(selectedArray, "districts");
+        })
+
+        const districts = document.querySelector("#districts");
+        districts.addEventListener('change', (e) => {
+            selectedArray.push(e.currentTarget.value);
+            getSelectedValue(selectedArray, "roads");
+            selectedArray.pop();
+        })
+
+        function getSelectedValue(selectedArray, selectorName) {
+            //要做甚麼事=>透過XMLHttpRequest物件對伺服器發出要求(Request)以及接受伺服器回應(Response)的資料
+            //第一步 建立Ajaxs物件
+            const xhr = new XMLHttpRequest();
+
+            //製作搜尋字串將selectedArray拆解成selectedArray=台北市&&selectedArray=台北市士林區
+            let queryString = selectedArray.map(value => "selectedArray=" + encodeURIComponent(value)).join("&");
+
+            //第二步 對伺服器發出要求
+            xhr.open('GET', `/api/SelectedCitiesOrDistricts?` + queryString);
+            xhr.send();
+
+            //第三步 接受伺服器回應(Response)的資料
+            //load事件表示伺服器已經回應資料了
+            xhr.addEventListener('load', () => {
+                //接收資料
+                const datas = JSON.parse(xhr.responseText);
+                const values = datas.map(value => {
+                    return (`<option value="${value}">${value}</option>`)
+                })
+                document.querySelector(`#${selectorName}`).innerHTML = values.join("");
+                if(selectedArray.length == 0){
+                    selectedArray.length = 0;
+                    selectedArray.push(cities.value);
+                    getSelectedValue(selectedArray, "districts");
+                }
+                if(selectedArray.length == 1){
+                    selectedArray.push(districts.value);
+                    getSelectedValue(selectedArray, "roads");
+                    selectedArray.pop();
+                }
+            })
+        }
+
+        //const selCities = document.querySelector('#cities');
+        //const selDistricts = document.querySelector('#districts');
+        //const selRoads = document.querySelector('#roads');
+
+        //loadCities();
+
+        //selCities.addEventListener('change', ()=>{
+        //    loadDistricts();
         //})
 
-        //const districts = document.querySelector("#districts");
-        //districts.addEventListener('change', (e) => {
-        //    selectedArray.push(e.currentTarget.value);
-        //    getSelectedValue(selectedArray, "roads");
-        //    selectedArray.pop();
+        //selDistricts.addEventListener('change', ()=>{
+        //    loadRoads();
         //})
 
-        //function getSelectedValue(selectedArray, selectorName) {
-        //    //要做甚麼事=>透過XMLHttpRequest物件對伺服器發出要求(Request)以及接受伺服器回應(Response)的資料
-        //    //第一步 建立Ajaxs物件
+        //function loadCities(){
         //    const xhr = new XMLHttpRequest();
-
-        //    //製作搜尋字串將selectedArray拆解成selectedArray=台北市&&selectedArray=台北市士林區
-        //    let queryString = selectedArray.map(value => "selectedArray=" + encodeURIComponent(value)).join("&");
-
-        //    //第二步 對伺服器發出要求
-        //    xhr.open('GET', `/api/SelectedCitiesOrDistricts?` + queryString);
+        //    xhr.open("GET", "/Api/Cities");
         //    xhr.send();
 
-        //    //第三步 接受伺服器回應(Response)的資料
-        //    //load事件表示伺服器已經回應資料了
-        //    xhr.addEventListener('load', () => {
-        //        //接收資料
+        //    xhr.addEventListener('load', ()=>{
         //        const datas = JSON.parse(xhr.responseText);
-        //        const values = datas.map(value => {
-        //            return (`<option value="${value}">${value}</option>`)
+        //        const cities = datas.map(city => {
+        //            return (`<option value="${city}">${city}</option>`)
         //        })
-        //        document.querySelector(`#${selectorName}`).innerHTML = values.join("");
-        //        if(selectedArray.length == 0){
-        //            selectedArray.length = 0;
-        //            selectedArray.push(cities.value);
-        //            getSelectedValue(selectedArray, "districts");
-        //        }
-        //        if(selectedArray.length == 1){
-        //            selectedArray.push(districts.value);
-        //            getSelectedValue(selectedArray, "roads");
-        //        }
+        //        selCities.innerHTML = cities.join("");
+        //        loadDistricts();
         //    })
         //}
 
-        const selCities = document.querySelector('#cities');
-        const selDistricts = document.querySelector('#districts');
-        const selRoads = document.querySelector('#roads');
+        //function loadDistricts(){
+        //    const city = selCities[selCities.selectedIndex];
+        //    const xhr = new XMLHttpRequest();
+        //    xhr.open("GET", `/Api/Districts?City=${city.value}`);
+        //    xhr.send();
 
-        loadCities();
+        //    xhr.addEventListener('load', () => {
+        //        const datas = JSON.parse(xhr.responseText);
+        //        const districts = datas.map(district => {
+        //            return (`<option value="${district}">${district}</option>`)
+        //        })
+        //        selDistricts.innerHTML = districts.join("");
+        //        loadRoads();
+        //    })
+        //}
 
-        selCities.addEventListener('change', ()=>{
-            loadDistricts();
-        })
+        //function loadRoads(){
+        //    const district = selDistricts[selDistricts.selectedIndex];
+        //    const xhr = new XMLHttpRequest();
+        //    xhr.open("GET", `/Api/Roads?District=${district.value}`);
+        //    xhr.send();
 
-        selDistricts.addEventListener('change', ()=>{
-            loadRoads();
-        })
-
-        function loadCities(){
-            const xhr = new XMLHttpRequest();
-            xhr.open("GET", "/Api/Cities");
-            xhr.send();
-
-            xhr.addEventListener('load', ()=>{
-                const datas = JSON.parse(xhr.responseText);
-                const cities = datas.map(city => {
-                    return (`<option value="${city}">${city}</option>`)
-                })
-                selCities.innerHTML = cities.join("");
-                loadDistricts();
-            })
-        }
-
-        function loadDistricts(){
-            const city = selCities[selCities.selectedIndex];
-            const xhr = new XMLHttpRequest();
-            xhr.open("GET", `/Api/Districts?City=${city.value}`);
-            xhr.send();
-
-            xhr.addEventListener('load', () => {
-                const datas = JSON.parse(xhr.responseText);
-                const districts = datas.map(district => {
-                    return (`<option value="${district}">${district}</option>`)
-                })
-                selDistricts.innerHTML = districts.join("");
-                loadRoads();
-            })
-        }
-
-        function loadRoads(){
-            const district = selDistricts[selDistricts.selectedIndex];
-            const xhr = new XMLHttpRequest();
-            xhr.open("GET", `/Api/Roads?District=${district.value}`);
-            xhr.send();
-
-            xhr.addEventListener('load', () => {
-                const datas = JSON.parse(xhr.responseText);
-                const roads = datas.map(road => {
-                    return (`<option value="${road}">${road}</option>`)
-                })
-                selRoads.innerHTML = roads.join("");
-            })
-        }
+        //    xhr.addEventListener('load', () => {
+        //        const datas = JSON.parse(xhr.responseText);
+        //        const roads = datas.map(road => {
+        //            return (`<option value="${road}">${road}</option>`)
+        //        })
+        //        selRoads.innerHTML = roads.join("");
+        //    })
+        //}
 
     </script>
 
