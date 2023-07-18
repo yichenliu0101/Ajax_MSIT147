@@ -38,6 +38,42 @@ namespace prjLesson.Controllers
             return View();
         }
 
+        public IActionResult History()
+        {
+            return View();
+        }
+
+        public IActionResult jQuery()
+        {
+            return View();
+        }
+
+        public IActionResult ShipperCors()
+        {
+            return View();
+        }
+
+        public IActionResult ShipperCorsEmpty()
+        {
+            return View();
+        }
+
+        public IActionResult Partial1()
+        {
+            return PartialView();
+        }
+
+        public IActionResult Partial2()
+        {
+            ViewBag.Message = "Hello Partial View in ViewBag";
+            return PartialView();
+        }
+
+        public IActionResult Datatables()
+        {
+            return View();
+        }
+
         public IActionResult Addresses() 
         {
             return View();

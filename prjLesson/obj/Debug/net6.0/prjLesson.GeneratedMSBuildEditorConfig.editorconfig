@@ -9,77 +9,105 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = prjLesson
 build_property.RootNamespace = prjLesson
-build_property.ProjectDir = C:\Users\aaron\Documents\GitHub\Ajax_MSIT147\prjLesson\
+build_property.ProjectDir = C:\Users\User\Documents\Ajax_MSIT147\prjLesson\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\aaron\Documents\GitHub\Ajax_MSIT147\prjLesson
+build_property.MSBuildProjectDirectory = C:\Users\User\Documents\Ajax_MSIT147\prjLesson
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/aaron/Documents/GitHub/Ajax_MSIT147/prjLesson/Views/Home/Addresses.cshtml]
+[C:/Users/User/Documents/Ajax_MSIT147/prjLesson/Views/Home/Addresses.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZGRyZXNzZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aaron/Documents/GitHub/Ajax_MSIT147/prjLesson/Views/Home/AjaxEvent.cshtml]
+[C:/Users/User/Documents/Ajax_MSIT147/prjLesson/Views/Home/AjaxEvent.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBamF4RXZlbnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aaron/Documents/GitHub/Ajax_MSIT147/prjLesson/Views/Home/Fetch.cshtml]
+[C:/Users/User/Documents/Ajax_MSIT147/prjLesson/Views/Home/Datatables.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEYXRhdGFibGVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Documents/Ajax_MSIT147/prjLesson/Views/Home/Fetch.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxGZXRjaC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aaron/Documents/GitHub/Ajax_MSIT147/prjLesson/Views/Home/First.cshtml]
+[C:/Users/User/Documents/Ajax_MSIT147/prjLesson/Views/Home/First.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxGaXJzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aaron/Documents/GitHub/Ajax_MSIT147/prjLesson/Views/Home/Index.cshtml]
+[C:/Users/User/Documents/Ajax_MSIT147/prjLesson/Views/Home/History.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxIaXN0b3J5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Documents/Ajax_MSIT147/prjLesson/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aaron/Documents/GitHub/Ajax_MSIT147/prjLesson/Views/Home/Privacy.cshtml]
+[C:/Users/User/Documents/Ajax_MSIT147/prjLesson/Views/Home/jQuery.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxqUXVlcnkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Documents/Ajax_MSIT147/prjLesson/Views/Home/Partial1.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQYXJ0aWFsMS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Documents/Ajax_MSIT147/prjLesson/Views/Home/Partial2.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQYXJ0aWFsMi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Documents/Ajax_MSIT147/prjLesson/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aaron/Documents/GitHub/Ajax_MSIT147/prjLesson/Views/Home/Register.cshtml]
+[C:/Users/User/Documents/Ajax_MSIT147/prjLesson/Views/Home/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aaron/Documents/GitHub/Ajax_MSIT147/prjLesson/Views/Members/Create.cshtml]
+[C:/Users/User/Documents/Ajax_MSIT147/prjLesson/Views/Home/ShipperCors.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTaGlwcGVyQ29ycy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Documents/Ajax_MSIT147/prjLesson/Views/Home/ShipperCorsEmpty.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTaGlwcGVyQ29yc0VtcHR5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Documents/Ajax_MSIT147/prjLesson/Views/Members/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYmVyc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aaron/Documents/GitHub/Ajax_MSIT147/prjLesson/Views/Members/Delete.cshtml]
+[C:/Users/User/Documents/Ajax_MSIT147/prjLesson/Views/Members/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYmVyc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aaron/Documents/GitHub/Ajax_MSIT147/prjLesson/Views/Members/Details.cshtml]
+[C:/Users/User/Documents/Ajax_MSIT147/prjLesson/Views/Members/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYmVyc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aaron/Documents/GitHub/Ajax_MSIT147/prjLesson/Views/Members/Edit.cshtml]
+[C:/Users/User/Documents/Ajax_MSIT147/prjLesson/Views/Members/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYmVyc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aaron/Documents/GitHub/Ajax_MSIT147/prjLesson/Views/Members/Index.cshtml]
+[C:/Users/User/Documents/Ajax_MSIT147/prjLesson/Views/Members/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYmVyc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aaron/Documents/GitHub/Ajax_MSIT147/prjLesson/Views/Shared/Error.cshtml]
+[C:/Users/User/Documents/Ajax_MSIT147/prjLesson/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aaron/Documents/GitHub/Ajax_MSIT147/prjLesson/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/User/Documents/Ajax_MSIT147/prjLesson/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aaron/Documents/GitHub/Ajax_MSIT147/prjLesson/Views/_ViewImports.cshtml]
+[C:/Users/User/Documents/Ajax_MSIT147/prjLesson/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aaron/Documents/GitHub/Ajax_MSIT147/prjLesson/Views/_ViewStart.cshtml]
+[C:/Users/User/Documents/Ajax_MSIT147/prjLesson/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aaron/Documents/GitHub/Ajax_MSIT147/prjLesson/Views/Shared/_Layout.cshtml]
+[C:/Users/User/Documents/Ajax_MSIT147/prjLesson/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-bymhmkp3t9
