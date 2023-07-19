@@ -23,6 +23,7 @@ namespace Homework.Controllers
         public IActionResult CheckAccount(string name)
         {
             var nameInDb = _context.Members.FirstOrDefault(m => m.Name == name);
+
             return Json(nameInDb);
         }
 
