@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "YDYbfRO/2KN530tDttIr8M8Xp2A69ErkuT5E9ulK164=",
+  "Hash": "qklyd7ORWfxrcTeTQVpeLMH7dJKvqpkrNOL8FkPLlr4=",
   "Source": "prjLesson",
   "BasePath": "_content/prjLesson",
   "Mode": "Default",
@@ -1188,6 +1188,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\EJV-qzCU8AAxMtV-752204058.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\User\\Documents\\Ajax_MSIT147\\prjLesson\\wwwroot\\uploads\\SSEBONG_11721847212.jpg",
+      "SourceId": "prjLesson",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\Documents\\Ajax_MSIT147\\prjLesson\\wwwroot\\",
+      "BasePath": "_content/prjLesson",
+      "RelativePath": "uploads/SSEBONG_11721847212.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\SSEBONG_11721847212.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\User\\Documents\\Ajax_MSIT147\\prjLesson\\wwwroot\\uploads\\Winter-36735136.jpg",
+      "SourceId": "prjLesson",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\Documents\\Ajax_MSIT147\\prjLesson\\wwwroot\\",
+      "BasePath": "_content/prjLesson",
+      "RelativePath": "uploads/Winter-36735136.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\Winter-36735136.jpg"
     }
   ]
 }

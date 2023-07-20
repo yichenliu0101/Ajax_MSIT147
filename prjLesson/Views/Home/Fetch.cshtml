@@ -4,7 +4,7 @@
 }
 
 <h1>Fetch</h1>
-
+<img id="img1"/>
 @section Scripts{
     <script>
         //fetch("/Api/Index")
@@ -22,12 +22,24 @@
         //.catch(error=>{
         //    console.log(error);
         //})
-        async function CallAjax() {
-            const response = await fetch("/api/Index");
-            const data = await response.text();
-            console.log(data);
-        }
 
-        CallAjax();
+        //async function CallAjax() {
+        //    const response = await fetch("/api/Index");
+        //    const data = await response.text();
+        //    console.log(data);
+        //}
+
+        //CallAjax();
+
+        fetch('@Url.Content("~/Api/GetImage/5")')
+        .then(response=>{
+            if(response.ok){
+                return response.blob();
+            }
+        })
+        .then(data=>{
+            const img = document.querySelector('#img1');
+            img.setAttribute('src', URL.createObjectURL(data));
+        })
     </script>
 }

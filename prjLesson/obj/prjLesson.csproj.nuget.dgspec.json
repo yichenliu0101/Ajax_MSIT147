@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\aaron\\Documents\\GitHub\\Ajax_MSIT147\\prjLesson\\prjLesson.csproj": {}
+    "C:\\Users\\User\\Documents\\Ajax_MSIT147\\prjLesson\\prjLesson.csproj": {}
   },
   "projects": {
-    "C:\\Users\\aaron\\Documents\\GitHub\\Ajax_MSIT147\\prjLesson\\prjLesson.csproj": {
+    "C:\\Users\\User\\Documents\\Ajax_MSIT147\\prjLesson\\prjLesson.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\aaron\\Documents\\GitHub\\Ajax_MSIT147\\prjLesson\\prjLesson.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Documents\\Ajax_MSIT147\\prjLesson\\prjLesson.csproj",
         "projectName": "prjLesson",
-        "projectPath": "C:\\Users\\aaron\\Documents\\GitHub\\Ajax_MSIT147\\prjLesson\\prjLesson.csproj",
-        "packagesPath": "C:\\Users\\aaron\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\aaron\\Documents\\GitHub\\Ajax_MSIT147\\prjLesson\\obj\\",
+        "projectPath": "C:\\Users\\User\\Documents\\Ajax_MSIT147\\prjLesson\\prjLesson.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\Documents\\Ajax_MSIT147\\prjLesson\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\aaron\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "C:\\Program Files\\dotnet\\sdk\\7.0.306\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },

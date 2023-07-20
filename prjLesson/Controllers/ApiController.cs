@@ -14,9 +14,14 @@ namespace prjLesson.Controllers
             _host = host;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(string name, int age = 20)
         {
-            return Content("Hello Ajax");
+            if (string.IsNullOrEmpty(name))
+            {
+                name = "Guest";
+            }
+            return Content($"Hello {name}!! You're {age} years old now!!");
+            //return Content("Hello Ajax");
             //return Content("<h2>Hello Content</h2>", "text/html");
             //return Content("<h2>Hello Content 好好好</h2>", "text/html", Encoding.UTF8);
 

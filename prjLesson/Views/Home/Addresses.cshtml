@@ -16,7 +16,8 @@
 @section Scripts{
     <script>
         const xhr = new XMLHttpRequest();
-        xhr.open('GET', '/api/cities');
+        //xhr.open('GET', '/api/cities');
+        xhr.open('GET', '@Url.Content("~/api/cities")');
         xhr.send();
         xhr.addEventListener('load', () => {
             const datas = JSON.parse(xhr.responseText);
@@ -36,7 +37,8 @@
             const xhr1 = new XMLHttpRequest();
             //第二步 對伺服器發出要求
             console.log(citis.value)
-            xhr1.open('GET', `/api/Districts?city=${citis.value}`);//大小寫都ok
+            //xhr1.open('GET', `/api/Districts?city=${citis.value}`);//大小寫都ok
+            xhr1.open('GET', `@Url.Content("/api/Districts?city=")${citis.value}`);//大小寫都ok
             xhr1.send();
 
             //第三步 接受伺服器回應(Response)的資料
@@ -57,7 +59,7 @@
             const xhr2 = new XMLHttpRequest();
 
             console.log(districts.value);
-            xhr2.open('GET', `/api/Roads?district=${districts.value}`);//大小寫都ok
+            xhr2.open('GET', `@Url.Content("/api/Roads?District=")${districts.value}`);//大小寫都ok
             xhr2.send();
 
             //第三步 接受伺服器回應(Response)的資料

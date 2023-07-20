@@ -43,20 +43,41 @@
         const div1 = document.querySelector('#div1');
         const link = document.querySelector('#backToIndex');
 
-        btnSubmit.addEventListener('click', event => {
+        btnSubmit.addEventListener('click', async(event) => {
             event.preventDefault();
 
             const formData = new FormData(document.registerForm);
-            const xhr = new XMLHttpRequest();
-            xhr.open("POST", "/Api/Register");
-            //xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-            //xhr.send("Name=Liu&Age=25&Email=HIHI@gmail");
-            xhr.send(formData);
+            //fetch('@Url.Content("/Api/Register")',{
+            //    body: formData,
+            //    method: 'POST'
+            //})
+            //.then(response=>{
+            //    if(response.ok){
+            //        return response.text();
+            //    }
+            //})
+            //.then(data=>{
+            //    div1.innerHTML = data;
+            //})
+            
+            const response = await fetch('@Url.Content("/Api/Register")',{
+                body: formData,
+                method: 'POST'
+            });
+            
+            const data = await response.text();
+            div1.innerHTML = data;
 
-            xhr.addEventListener("load", () => {
-                const data = xhr.responseText;
-                div1.innerHTML = data;
-            })
+            //const xhr = new XMLHttpRequest();
+            //xhr.open("POST", "/Api/Register");
+            ////xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            ////xhr.send("Name=Liu&Age=25&Email=HIHI@gmail");
+            //xhr.send(formData);
+
+            //xhr.addEventListener("load", () => {
+            //    const data = xhr.responseText;
+            //    div1.innerHTML = data;
+            //})
         })
 
         link.addEventListener('click', event => {
